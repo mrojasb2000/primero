@@ -6,9 +6,7 @@ jobs:
       - image: circleci/ruby:2.6.3
     steps:
       - checkout
-      - run: cd backend
-      - run: ls -al
-      - run: docker build --tag backend:1.0 -f /home/circleci/limoneno/backend/Dockerfile
+      - run: cd backend && docker build --tag backend:1.0 .
 workflows:
   version: 2
   build_and_deploy:
