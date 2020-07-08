@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/limoneno
     docker:
-      - image: circleci/ruby:2.6.3
+      - image: docker:17.05.0-ce-git
     steps:
       - checkout
       - run: cd backend && docker build --tag backend:1.0 .
