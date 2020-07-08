@@ -27,3 +27,6 @@ rvm list known
 rvm install 2.6.3
 rvm use 2.3.6
 ruby -v
+
+gem install bundler --no-user-install
+gem install foreman --no-user-install
