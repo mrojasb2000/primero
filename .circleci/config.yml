@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: cd backend
       - run: ls -al
-      - run: docker build --tag backend:1.0 .
+      - run: ./backend/docker build --tag backend:1.0 .
 workflows:
   version: 2
   build_and_deploy:
