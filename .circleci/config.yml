@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: cd backend
-      - run: ls -la
+      - run: docker build backend:1.0 .
 workflows:
   version: 2
   build_and_deploy:
