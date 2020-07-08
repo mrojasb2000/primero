@@ -1,0 +1,16 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/limoneno
+    docker:
+      - image: circleci/ruby:2.6.3
+    steps:
+      - checkout
+      - run: cd backend
+      - run: ls -la
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+             
