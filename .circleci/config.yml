@@ -34,6 +34,14 @@ jobs:
       steps:
         - checkout
         - setup_remote_docker
+        - run:
+            name: Install dependencies
+            command: |
+              apk add py-pip
+              pip install awscli
+        - run:
+            name: Login Amazon Elastic Container Registry 
+            command: aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 139689174177.dkr.ecr.us-west-1.amazonaws.com        
         - run: 
             name: "Build Image"
             command: docker build --tag limonenoback:latest .
