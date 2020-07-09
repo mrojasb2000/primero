@@ -50,7 +50,7 @@ jobs:
             command: docker tag limonenoback:latest 139689174177.dkr.ecr.us-west-1.amazonaws.com/limoneno:latest
         - run:
             name: Push images Docker to Registry 
-            command: docker push limonenoback:latest 139689174177.dkr.ecr.us-west-1.amazonaws.com/limoneno:latest            
+            command: docker push 139689174177.dkr.ecr.us-west-1.amazonaws.com/limoneno:latest            
 workflows:
   version: 2
   build_and_deploy:
