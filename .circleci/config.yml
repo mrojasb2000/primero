@@ -3,13 +3,12 @@ jobs:
   build:
     working_directory: ~/limoneno
     docker:
-      - image: docker:17.05.0-ce-git
+      - image: circleci/ruby:2.6.3
     steps:
       - checkout
-      - setup_remote_docker
       - run: 
-          name: "Build Image"
-          command: docker build --tag backend:1.0 .
+          name: "Install bundler"
+          command: gem install bundler
 workflows:
   version: 2
   build_and_deploy:
