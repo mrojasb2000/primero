@@ -9,6 +9,9 @@ jobs:
       - run: 
           name: "Upgrade OS"
           command: sudo apt-get update
+      - run:
+          name: "Install MySQL Client 5.7"
+          command: sudo apt-get install mysql-client    
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
