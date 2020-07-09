@@ -9,9 +9,6 @@ jobs:
       - run: 
           name: "Install MySQL Client 5.7"
           command: sudo apt update -y && sudo apt install -y default-mysql-client
-      - run:
-          name: "Test connection MySQL"
-          command: mysql -h $MYSQL_SERVER -P $MYSQL_PORT -u $MYSQL_USER -p$MYSQL_PWD 
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
@@ -21,6 +18,9 @@ jobs:
       - run:
           name: "Install dependencies"
           command: bundle install  
+      - run:
+          name: "Running db migration"
+          command: cd db && rake db:create  
 workflows:
   version: 2
   build_and_deploy:
