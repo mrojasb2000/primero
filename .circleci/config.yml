@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: 
           name: "Upgrade OS"
-          command: sudo yum update
+          command: sudo apt-get update
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
