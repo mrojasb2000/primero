@@ -4,6 +4,7 @@ jobs:
     working_directory: ~/limoneno
     docker:
       - image: circleci/ruby:2.6.3
+      - image: circleci/mysql:5.7-ram
     steps:
       - checkout
       - run: 
