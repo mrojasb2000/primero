@@ -7,6 +7,9 @@ jobs:
       - image: circleci/mysql:5.7.27
     steps:
       - checkout
+      - run:
+          name: "Test connection MySQL"
+          command: mysql -h ec2-54-215-104-48.us-west-1.compute.amazonaws.com -P 3307 -u $MYSQL_USER -p $MYSQL_PWD 
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
@@ -15,10 +18,7 @@ jobs:
           command: gem install foreman --no-user-install
       - run:
           name: "Install dependencies"
-          command: bundle install
-      - run:
-          name: "Running migration"
-          command: cd db && bundle exec rake db:create        
+          command: bundle install  
 workflows:
   version: 2
   build_and_deploy:
