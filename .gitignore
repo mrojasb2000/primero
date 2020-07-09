@@ -26,3 +26,16 @@
 /config/master.key
 .env
 coverage
+
+# Terraform state file(s)
+*.tfstate
+*.tfstate.*
+
+# Terraform provider folder
+.terraform/
+
+# SSH keys
+keys/
+
+# Gem lock files
+*.lock
