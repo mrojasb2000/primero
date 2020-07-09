@@ -7,9 +7,12 @@ jobs:
       - image: circleci/mysql:5.7.27
     steps:
       - checkout
+      - run: 
+          name: "Install MySQL Client 5.7"
+          command: sudo apt install -y mysql-client
       - run:
           name: "Test connection MySQL"
-          command: mysql -h ec2-54-215-104-48.us-west-1.compute.amazonaws.com -P 3307 -u $MYSQL_USER -p $MYSQL_PWD 
+          command: mysql -h $MYSQL_SERVER -P $MYSQL_PORT -u $MYSQL_USER -p $MYSQL_PWD 
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
