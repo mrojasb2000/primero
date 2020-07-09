@@ -36,7 +36,10 @@ jobs:
         - setup_remote_docker
         - run: 
             name: "Build Image"
-            command: docker build --tag limonenoback:1.0 .                         
+            command: docker build --tag limonenoback:1.0 .
+        - run:
+            name: Tag images Docker
+            command: docker tag limonenoback:latest 139689174177.dkr.ecr.us-west-1.amazonaws.com/limoneno:latest
 workflows:
   version: 2
   build_and_deploy:
