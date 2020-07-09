@@ -19,8 +19,11 @@ jobs:
           name: "Install dependencies"
           command: bundle install  
       - run:
+          name: "Running db create"
+          command: cd db && bundle exec rake db:create
+      - run:
           name: "Running db migration"
-          command: cd db && bundle exec rake db:create  
+          command: cd db && bundle exec rake db:migrate      
 workflows:
   version: 2
   build_and_deploy:
