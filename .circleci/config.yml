@@ -23,7 +23,10 @@ jobs:
           command: cd db && bundle exec rake db:create
       - run:
           name: "Running db migration"
-          command: cd db && bundle exec rake db:migrate      
+          command: cd db && bundle exec rake db:migrate  
+      - run:
+          name: "Running db seed"
+          command: cd db && bundle exec rake db:seed               
 workflows:
   version: 2
   build_and_deploy:
