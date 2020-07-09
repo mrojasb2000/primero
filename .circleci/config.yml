@@ -4,15 +4,9 @@ jobs:
     working_directory: ~/limoneno
     docker:
       - image: circleci/ruby:2.6.3
-      - image: circleci/mysql:5.7-ram
+      - image: circleci/mysql:5.7.27
     steps:
       - checkout
-      - run: 
-          name: "Upgrade OS"
-          command: sudo apt-get update
-      - run:
-          name: "Install MySQL Client 5.7"
-          command: sudo apt-get update; sudo DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server-5.7 
       - run: 
           name: "Install bundler"
           command: gem install bundler --no-user-install
