@@ -11,7 +11,7 @@ jobs:
           command: gem install bundler --no-user-install
       - run:
           name: "Install Foreman"
-          command: ggem install foreman --no-user-install    
+          command: gem install foreman --no-user-install    
 workflows:
   version: 2
   build_and_deploy:
