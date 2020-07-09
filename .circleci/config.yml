@@ -17,7 +17,7 @@ jobs:
           command: bundle install
       - run:
           name: "Running migration"
-          command: cd db && rake db:create        
+          command: cd db && bundle exec && rake db:create        
 workflows:
   version: 2
   build_and_deploy:
